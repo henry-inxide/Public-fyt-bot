@@ -1,17 +1,32 @@
 {
-  "name": "fb-bot-locker",
+  
+
+  "name": "fb-auto-message-bot",
+
   "version": "1.0.0",
-  "description": "Facebook bot with nickname and group name lock",
-  "main": "server.js",
+
+  "description": "Facebook Auto Message Looper (File-based)",
+
+  "main": "index.js",
+
   "scripts": {
+
     "start": "node server.js"
+
   },
-  "engines": {
-    "node": "18.x"
-  },
+
   "dependencies": {
-    "express": "^4.18.2",
-    "body-parser": "^1.20.2",
-    "ws3-fca": "18.20.2"
-  }
+
+    "ws3-fca": "^1.0.1",
+
+    "moment": "^2.29.4", 
+
+    "npmlog": "^6.0.2"
+
+  },
+
+  "author": "Henry",
+
+  "license": "MIT"
+
 }
