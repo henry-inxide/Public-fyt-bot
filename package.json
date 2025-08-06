@@ -1,32 +1,17 @@
 {
-  "name": "Web-tool",
-  "version": "2.1.0",
-  "description": "Canvo tool by Mr Devil",
-  "main": "web.js",
+  "name": "fb-bot-locker",
+  "version": "1.0.0",
+  "description": "Facebook bot with nickname and group name lock",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dineshsrivastav/Web.git"
+  "engines": {
+    "node": "18.x"
   },
-  "keywords": [
-    "Web-Tool",
-    "Canvo-Tool",
-    "Web-to-web",
-    "tool"
-  ],
-  "author": "Devil King",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dineshsrivastav/Web/issues"
-  },
-  "homepage": "https://github.com/dineshsrivastav/Web #readme",
   "dependencies": {
-        "facebook-chat-api": "^1.8.0",
-    "axios": "^1.7.3",
-    "express": "^4.19.2",
- "fca-unofficial": "^1.3.10",
-    "prompt": "^1.3.0"
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "ws3-fca": "^1.4.1"
   }
 }
