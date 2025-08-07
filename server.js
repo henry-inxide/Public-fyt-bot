@@ -38,13 +38,13 @@ app.post('/start', async (req, res) => {
       // Group name lock
       if (event.logMessageType === 'log:thread-name' && lockedGroupNames[threadID]) {
         api.setTitle(lockedGroupNames[threadID], threadID);
-        reply("Piyush papa ne name rakha hai, change nahi hoga 🤣");
+        reply("Henry papa ne name rakha hai, change nahi hoga 🤣");
       }
 
       // Nickname lock
       if (event.logMessageType === 'log:user-nickname' && lockedNicknames[threadID]) {
         api.changeNickname(lockedNicknames[threadID][event.logMessageData.participant_id] || '', threadID, event.logMessageData.participant_id);
-        reply("Naam lock hai. Piyush papa se puchho 🤣");
+        reply("Naam lock hai. Henry papa se puchho 🤣");
       }
 
       if (!body.startsWith(config.prefix)) return;
