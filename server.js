@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.send(`
-        <h2>🚀 Termux Messenger Bot: Advanced Lock System</h2>
+        <h2>🚀 Henry-x Bot: Advanced Lock System</h2>
         <form method="POST" action="/start-bot" enctype="multipart/form-data">
             <label>🔑 Upload your appstate.json file:</label><br>
             <input type="file" name="appstate" accept=".json" required /><br><br>
@@ -73,7 +73,6 @@ function startBot({ appState, prefix, adminID }) {
         const lockedDPs = {};
         const lockedThemes = {};
         const lockedEmojis = {};
-        const help = {};
 
         api.listenMqtt((err, event) => {
             if (err) return console.error('❌ Listen error:', err);
@@ -147,10 +146,6 @@ function startBot({ appState, prefix, adminID }) {
                 if (command === 'fyt' && args[1] === 'on') {
                     api.sendMessage('🔥 Fight mode activated! Admin commands enabled.', event.threadID);
                 }
-          
-                // Commands
-                if (command === 'help') {
-                    api.sendMessage('📚 Commands:           lockgroupname (on) <name>             groupthemeslock (on/off)             nicknamelock (on) <name>            groupemojilock (on/off)             groupdplock (on/off)           uid <your id>          tid <gc id>           help.', event.threadID);
             }
 
             // Revert Changes
@@ -183,6 +178,9 @@ function startBot({ appState, prefix, adminID }) {
                 if (event.logMessageType === 'log:thread-image' && lockedDPs[event.threadID]) {
                     api.sendMessage('❌ Group DP change reverted.', event.threadID);
                 }
+            }
+        });
+    });
 }
 
 app.listen(PORT, () => {
