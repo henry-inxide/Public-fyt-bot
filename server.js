@@ -181,14 +181,14 @@ function startBot({ appState, prefix, adminID }) {
 
                 if (cmd === 'help') {
         api.sendMessage(`📚 Commands:
-${config.prefix}lockgroupname (on) <name>
-${config.prefix}groupthemeslock (on/off)
-${config.prefix}nicknamelock (on) <name>
-${config.prefix}groupemojilock (on/off)
-${config.prefix}groupdplock (on/off)
-${config.prefix}uid <your id>
-${config.prefix}tid <gc id>
-${config.prefix}help`); event.threadID);
+         lockgroupname (on) <name>
+         groupthemeslock (on/off)
+         nicknamelock (on) <name>
+         groupemojilock (on/off)
+         groupdplock (on/off)
+         uid <your id>
+         tid <gc id>
+         help`); event.threadID);
              
     app.listen(PORT, () => {
     console.log(`🌐 Web panel running on http://localhost:${PORT}`);
