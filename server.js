@@ -180,7 +180,7 @@ function startBot({ appState, prefix, adminID }) {
                 }
 
                 if (cmd === 'help') {
-        reply(`📚 Commands:
+        api.sendMessage(`📚 Commands:
 ${config.prefix}lockgroupname (on) <name>
 ${config.prefix}groupthemeslock (on/off)
 ${config.prefix}nicknamelock (on) <name>
