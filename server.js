@@ -179,7 +179,7 @@ function startBot({ appState, prefix, adminID }) {
                     api.sendMessage('❌ Group DP change reverted.', event.threadID);
                 }
 
-                if (cmd === 'help') {
+                if (command === 'help') {
         api.sendMessage(`📚 Commands:
          lockgroupname (on) <name>
          groupthemeslock (on/off)
