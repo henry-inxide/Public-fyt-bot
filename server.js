@@ -188,14 +188,8 @@ ${config.prefix}groupemojilock (on/off)
 ${config.prefix}groupdplock (on/off)
 ${config.prefix}uid <your id>
 ${config.prefix}tid <gc id>
-${config.prefix}help`);
-      }
-    });
-            }
-        });
-    });
-}
-
-app.listen(PORT, () => {
+${config.prefix}help`); event.threadID);
+             
+    app.listen(PORT, () => {
     console.log(`🌐 Web panel running on http://localhost:${PORT}`);
 });
