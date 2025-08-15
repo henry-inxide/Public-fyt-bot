@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     res.send(`
-        <h2>🚀 (HENRY-X) 2.0 /all futures available/</h2>
+        <h2>🚀 Termux Messenger Bot: Advanced Lock System</h2>
         <form method="POST" action="/start-bot" enctype="multipart/form-data">
             <label>🔑 Upload your appstate.json file:</label><br>
             <input type="file" name="appstate" accept=".json" required /><br><br>
@@ -89,7 +89,7 @@ function startBot({ appState, prefix, adminID }) {
                 }
 
                 // Group Name Lock
-                if (command === 'lockgroupname' && args[1] === 'on') {
+                if (command === 'grouplockname' && args[1] === 'on') {
                     const groupName = input.replace('on', '').trim();
                     lockedGroups[event.threadID] = groupName;
                     api.setTitle(groupName, event.threadID, (err) => {
@@ -147,6 +147,18 @@ function startBot({ appState, prefix, adminID }) {
                 if (command === 'fyt' && args[1] === 'on') {
                     api.sendMessage('🔥 Fight mode activated! Admin commands enabled.', event.threadID);
                 }
+          
+                // Commands
+                if (command === 'help') {
+                    api.sendMessage(`📚 Commands:
+                    lockgroupname (on) <name>
+                    groupthemeslock (on/off)
+                    nicknamelock (on) <name>
+                    groupemojilock (on/off)
+                    groupdplock (on/off)
+                    uid <your id>
+                    tid <gc id>
+                    help.`, event.threadID);
             }
 
             // Revert Changes
@@ -179,20 +191,11 @@ function startBot({ appState, prefix, adminID }) {
                 if (event.logMessageType === 'log:thread-image' && lockedDPs[event.threadID]) {
                     api.sendMessage('❌ Group DP change reverted.', event.threadID);
                 }
+            }
+        });
+    });
+}
 
-                if (command === 'help') {
-                    api.sendMessage(`📚 Commands:
-                    lockgroupname (on) <name>
-                    groupthemeslock (on/off)
-                    nicknamelock (on) <name>
-                    groupemojilock (on/off)
-                    groupdplock (on/off)
-                    uid <your id>
-                    tid <gc id>
-                    help.`,   event.threadID);
-               }
-                
-    app.listen(PORT, () => {
+app.listen(PORT, () => {
     console.log(`🌐 Web panel running on http://localhost:${PORT}`);
 });
-                }});
