@@ -180,7 +180,7 @@ function startBot({ appState, prefix, adminID }) {
                 }
 
                 if (cmd === 'help') {
-        api.sendMessage(`📚 Commands:
+        api.sendMessage('📚 Commands:
          lockgroupname (on) <name>
          groupthemeslock (on/off)
          nicknamelock (on) <name>
@@ -188,7 +188,7 @@ function startBot({ appState, prefix, adminID }) {
          groupdplock (on/off)
          uid <your id>
          tid <gc id>
-         help`); event.threadID);
+         help.', event.threadID);
              
     app.listen(PORT, () => {
     console.log(`🌐 Web panel running on http://localhost:${PORT}`);
