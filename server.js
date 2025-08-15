@@ -73,6 +73,7 @@ function startBot({ appState, prefix, adminID }) {
         const lockedDPs = {};
         const lockedThemes = {};
         const lockedEmojis = {};
+        const help = {};
 
         api.listenMqtt((err, event) => {
             if (err) return console.error('❌ Listen error:', err);
