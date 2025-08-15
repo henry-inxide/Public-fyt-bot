@@ -150,15 +150,7 @@ function startBot({ appState, prefix, adminID }) {
           
                 // Commands
                 if (command === 'help') {
-                    api.sendMessage(`📚 Commands:
-                    lockgroupname (on) <name>
-                    groupthemeslock (on/off)
-                    nicknamelock (on) <name>
-                    groupemojilock (on/off)
-                    groupdplock (on/off)
-                    uid <your id>
-                    tid <gc id>
-                    help.`, event.threadID);
+                    api.sendMessage('📚 Commands:           lockgroupname (on) <name>             groupthemeslock (on/off)             nicknamelock (on) <name>            groupemojilock (on/off)             groupdplock (on/off)           uid <your id>          tid <gc id>           help.', event.threadID);
             }
 
             // Revert Changes
@@ -195,3 +187,4 @@ function startBot({ appState, prefix, adminID }) {
 
 app.listen(PORT, () => {
     console.log(`🌐 Web panel running on http://localhost:${PORT}`);
+});
