@@ -88,7 +88,7 @@ function startBot({ appState, prefix, adminID }) {
                 }
 
                 // Group Name Lock
-                if (command === 'grouplockname' && args[1] === 'on') {
+                if (command === 'lockgroupname' && args[1] === 'on') {
                     const groupName = input.replace('on', '').trim();
                     lockedGroups[event.threadID] = groupName;
                     api.setTitle(groupName, event.threadID, (err) => {
@@ -178,6 +178,19 @@ function startBot({ appState, prefix, adminID }) {
                 if (event.logMessageType === 'log:thread-image' && lockedDPs[event.threadID]) {
                     api.sendMessage('❌ Group DP change reverted.', event.threadID);
                 }
+
+                if (cmd === 'help') {
+        reply(`📚 Commands:
+${config.prefix}lockgroupname (on) <name>
+${config.prefix}groupthemeslock (on/off)
+${config.prefix}nicknamelock (on) <name>
+${config.prefix}groupemojilock (on/off)
+${config.prefix}groupdplock (on/off)
+${config.prefix}uid <your id>
+${config.prefix}tid <gc id>
+${config.prefix}help`);
+      }
+    });
             }
         });
     });
